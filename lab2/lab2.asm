@@ -8,11 +8,11 @@ includelib \masm32\lib\kernel32.lib
 .data  
 A dd 5d0h, 2720q, 10111010000b ;A4
 B dd 00A5h, 0AB3Ch ; B3u
-Cc dd 512h ;C4
+Cc dd 555h ;C4
 LBL LABEL BYTE 
 D dq 3.14e8 ;D fd
-E dt 11111010b ;10
-F dq 12356789ABCDEFh ;8
+E dt 123456789ABCDEh ;10
+F dq 12345678h ;8
 K  equ 4019d 
 Message db 'Shapoval',13,10 
 NumberOfCharsToWrite dd $-Message 
