@@ -19,7 +19,7 @@ includelib \masm32\lib\user32.lib
     TEMP3 DW ?
     X DD ?
  
-Message db 'X = A * B + A * C - D / E + K =           ', 13, 10 
+Message db 'X = A * B + A * C - D / E + K =             ', 13, 10 
 NumberOfCharsToWrite dd $-Message 
 format db '%d', 0 
 hConsoleOutput dd 0 
