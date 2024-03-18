@@ -1,0 +1,10 @@
+[filter "lfs"]
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+        required = true
+[user]
+        name = Field-Effect-Transistor
+        email = 145497915+Field-Effect-Transistor@users.noreply.github.com
+[credential]
+        helper = manager-core
