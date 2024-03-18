@@ -19,11 +19,11 @@ includelib \masm32\lib\user32.lib
     TEMP3 DW ?
     X DD ?
  
-Message db 'X = A * B + A * C - D / E + K =             ', 13, 10 
-NumberOfCharsToWrite dd $-Message 
-format db '%d', 0 
-hConsoleOutput dd 0 
-NumberOfCharsWritten dd 0 
+    Message db 'X = A * B + A * C - D / E + K =             ', 13, 10 
+    NumberOfCharsToWrite dd $-Message 
+    format db '%d', 0 
+    hConsoleOutput dd 0 
+    NumberOfCharsWritten dd 0 
  
 .code 
 start: 
@@ -40,8 +40,8 @@ IMUL ax, A ; C(al) * A -> ax
 mov TEMP2, ax ; (A * C)(ax) -> TEMP2
 
 ; TEMP3 = D / E
-mov ax, D ; D -> eax
-IDIV E ; D(eax) / E -> ax
+mov ax, D ; D -> ax
+IDIV E ; D(ax) / E -> ax
 mov TEMP3, ax ; (D / E)(ax) -> TEMP3
 
 ; X = TEMP1 + TEMP2 - TEMP3 + K
