@@ -9,8 +9,8 @@ includelib \masm32\lib\user32.lib
 
 .data 
 
-A	db	100
-B	db	25
+A	db	-50
+B	db	-10
 X	dw	0
 
 Hello	db 13, 10
