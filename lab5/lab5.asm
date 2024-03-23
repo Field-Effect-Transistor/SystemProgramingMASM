@@ -9,7 +9,7 @@ includelib \masm32\lib\user32.lib
 
 .data 
 
-X dd 5, 2, 6, 4, 5, 4, 3, 5, 9, 5		;масив
+X dd -1, 2, -3, 4, -5, 6, -7, 8, -9, 10		;масив
 A dd 5
 N equ ($-X) / type X - 1		    	;розмір масиву
 Res dd 0				        	    ;результат
@@ -21,6 +21,18 @@ hConsoleOutput dd 0
 NumberOfCharsWritten dd 0
 
 .code
+
+;якщо Х > 0
+x_g_0:
+    cmp A, eax
+    jge A_ge_x  ;перевірка, чи Х <= A
+    jmp return
+
+;якщо Х <= A
+A_ge_x:
+    add edx, 1  ;інкремент
+    jmp return
+
 start:
 
 ;обчислення к-сти повторів А
@@ -28,10 +40,9 @@ mov ecx, N
 mov edx, 0
 L:
 	mov eax, [X + ecx * type X - type X] 
-    cmp eax, A
-    jne skip
-	add edx, 1
-    skip:
+    cmp eax, 0 
+    jg x_g_0    ;перевірка, чи Х > 0
+    return:
 	loop L
 mov Res, edx
 
